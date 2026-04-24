@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .a4-container {
+            width: 210mm;
+            height: 297mm;
+            margin: auto;
+            background: white;
+            border: 1px solid black;
+            padding: 0 10mm;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        .column-new {
+            width: 33.3%;
+            padding: 10px;
+            box-sizing: border-box;
+            font-family: serif;
+        }
+        p {
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+
+        .main-content {
+            display: flex;
+            width: 100%;
+            margin-top: 15px;
+            align-items: stretch;
+        }
+    </style>
+</head>
+<body>
+
+<div class="a4-container">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 15px; font-family: serif; font-size: 14px;">
+        <div>
+            <span style="font-size: 32px; font-weight: bold; margin-right: 5px;">4</span>
+            <span>13 февраля 2026 года, пятница № 6(8542)</span>
+        </div>
+        <span style="font-weight: bold; font-size: 28px; text-transform: uppercase;">Рука на пульсе ⊞</span>
+    </div>
+
+    <hr style="border: none; border-top: 4px solid blue; width: 100%; margin: 2px 0 0 0;">
+
+    <div class="main-content">
+
+        <div style="width: 33.4%; background-color: #ffcccc; box-sizing: border-box; font-family: serif; overflow: hidden;">
+            <img src="1.png" style="float: right; width: 90px; height: 120px; object-fit: cover; margin-left: 10px; margin-bottom: 5px; background: #ccc;">
+            <div style="padding: 10px;">
+                <div style="border-top: 3px solid red; padding-top: 5px; margin-right: 100px">
+                    <p style="margin: 0; font-weight: bold; text-transform: uppercase; font-size: 14px; color: red; text-align: center;">дежурный по планете</p>
+                    <div style="border-bottom: 3px solid red; margin-top: 5px; margin-bottom: 10px;"></div>
+                </div>
+                <p style="text-align: right; font-weight: bold; font-size: 13px;">Алексей ГОРЮНОВ</p>
+                <p style="text-align: justify; font-size: 14px;">
+                    <span style="color: red; font-size: 18px; font-weight: bold;">■</span>
+                    Евросоюз представил 20-й пакет санкций против России. В него вошли новые ограничения на экспорт технологий и заморозка активов.
+                </p>
+                <p style="text-align: justify; font-size: 14px;">
+                    <span style="color: red; font-size: 18px; font-weight: bold;">■</span>
+                    Международные наблюдатели отмечают рост активности в азиатском секторе, что станет альтернативой рынкам.
+                </p>
+            </div>
+        </div>
+
+        <div style="width: 66.6%; display: flex; flex-direction: column; justify-content: space-between;">
+
+            <div>
+                <h2 style="width: 100%; margin: 0; padding: 15px 10px; font-family: serif; text-align: left; text-transform: uppercase; font-size: 15px;">
+                    Их будут помнить земляки
+                </h2>
+
+                <div style="display: flex;">
+                    <div class="column-new"><p style="text-align: justify; font-size: 13px;">Текст первой колонки первого ряда.</p></div>
+                    <div class="column-new" style="border-bottom: 2px solid black;"><p style="text-align: justify; font-size: 13px;">Вторая колонка первого ряда.</p></div>
+                    <div class="column-new"><img src="3.png" style="width: 100%; height: auto; display: block; border: 3px solid black;"></div>
+                </div>
+
+                <div style="display: flex; margin-top: 10px;">
+                    <div class="column-new"><img src="2.png" style="width: 100%; height: auto; display: block; border: 3px solid black;"></div>
+                    <div class="column-new" style="border-bottom: 2px solid black;"><p style="text-align: justify; font-size: 13px;">Текст второго ряда (2).</p></div>
+                    <div class="column-new"><p style="text-align: justify; font-size: 13px;">Текст второго ряда (3).</p></div>
+                </div>
+
+                <div style="display: flex; margin-top: 10px;">
+                    <div class="column-new"><p style="text-align: justify; font-size: 13px;">Текст третьего ряда (1).</p></div>
+                    <div class="column-new"><p style="text-align: justify; font-size: 13px;">Текст третьего ряда (2).</p></div>
+                    <div class="column-new"><img src="4.png" style="width: 100%; height: auto; display: block; border: 3px solid black;"></div>
+                </div>
+
+                <h2 style="width: 100%; margin: 20px 0 0 0; padding: 10px; font-family: serif; text-align: left; text-transform: uppercase; font-size: 15px;">
+                    Между Калугой и Ферзиковом запущен "Орлан"
+                </h2>
+
+                <div style="display: flex;">
+                    <div class="column-new"><p style="text-align: justify; font-size: 12px;">Колонка событий 1.</p></div>
+                    <div class="column-new"><p style="text-align: justify; font-size: 12px;">Колонка событий 2.</p></div>
+                    <div class="column-new"><p style="text-align: justify; font-size: 12px;">Колонка событий 3.</p></div>
+                </div>
+            </div>
+
+            <div style="padding: 0 10px 0 10px;">
+                <img src="5.png" style="width: 100%; height: 150px; object-fit: cover; display: block;">
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
