@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --cycle: 30s;
+        }
+
+        body, html { margin: 0; padding: 0; overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; }
+
+        .sky {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            animation: skyColor var(--cycle) infinite linear;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        @keyframes skyColor {
+            0%, 25%, 100% { background: #d1e9ff; }
+            35%, 65% { background: #87CEEB; }
+            75%, 95% { background: #78909c; }
+        }
+
+        .season-name {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            z-index: 20;
+        }
+        .season-name::after {
+            content: '';
+            animation: seasonText var(--cycle) infinite linear;
+        }
+        @keyframes seasonText {
+            0%, 25%, 100% { content: 'Зима'; color: #0277bd; }
+            35%, 48% { content: 'Весна'; color: #2e7d32; }
+            50%, 65% { content: 'Лето'; color: #fbc02d; }
+            75%, 95% { content: 'Осень'; color: #d84315; }
+        }
+
+        .rain-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 12;
+        }
+        .rain-drop {
+            position: absolute;
+            background: rgba(174, 194, 224, 0.6);
+            width: 2px;
+            height: 15px;
+            top: -20px;
+            animation: dropFall 0.8s linear infinite, rainFade var(--cycle) infinite linear;
+        }
+        @keyframes dropFall {
+            to { transform: translateY(100vh); }
+        }
+        @keyframes rainFade {
+            0%, 72% { opacity: 0; }
+            75%, 90% { opacity: 1; }
+            93%, 100% { opacity: 0; }
+        }
+
+        .ground {
+            position: absolute;
+            bottom: 0; width: 100%; height: 22vh;
+            animation: groundColor var(--cycle) infinite linear;
+            z-index: 5;
+        }
+        @keyframes groundColor {
+            0%, 25%, 100% { background: #ffffff; }
+            35%, 65% { background: #4CAF50; }
+            75%, 95% { background: #5d4037; }
+        }
+
+        .snow-container {
+            position: absolute;
+            bottom: 21vh;
+            width: 100%;
+            height: 100px;
+            z-index: 4;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+        .snowdrift {
+            background: #ffffff;
+            border-radius: 100px 100px 0 0;
+            filter: blur(2px);
+            transform-origin: bottom;
+            animation: snowLife var(--cycle) infinite linear;
+        }
+        .drift-1 { width: 350px; height: 70px; margin-left: -100px; }
+        .drift-2 { width: 500px; height: 100px; }
+        .drift-3 { width: 300px; height: 50px; margin-right: -100px; }
+
+        @keyframes snowLife {
+            0%, 25% { transform: scaleY(1); opacity: 1; }
+            35% { transform: scaleY(0.7); opacity: 1; }
+            45% { transform: scaleY(0.2); opacity: 0.5; }
+            50%, 90% { transform: scaleY(0); opacity: 0; }
+            100% { transform: scaleY(1); opacity: 1; }
+        }
+
+        .flower-bed {
+            position: absolute;
+            bottom: 21vh;
+            width: 70%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 6;
+        }
+        .flower {
+            display: inline-block;
+            font-size: 30px;
+            transform: scale(0);
+            opacity: 0;
+            animation: flowerGrow var(--cycle) infinite linear;
+            transform-origin: bottom;
+        }
+        @keyframes flowerGrow {
+            0%, 45% { transform: scale(0); opacity: 0; }
+            50%, 65% { transform: scale(1); opacity: 1; }
+            70%, 100% { transform: scale(0); opacity: 0; }
+        }
+
+        .tree-container {
+            position: relative;
+            bottom: 22vh;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .trunk {
+            width: 30px;
+            height: 350px;
+            background: linear-gradient(to right, #5d4037, #3e2723);
+            border-radius: 8px 8px 0 0;
+        }
+        .foliage {
+            position: absolute;
+            top: -220px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            animation: foliageLife var(--cycle) infinite linear;
+        }
+        @keyframes foliageLife {
+            0%, 25%, 100% { background: transparent; transform: scale(0); }
+            35% { background: #a2d149; transform: scale(0.9); }
+            50%, 65% { background: #1b5e20; transform: scale(1.2); }
+            75%, 85% { background: #e65100; transform: scale(1.1); }
+        }
+
+        .bird-fly {
+            position: absolute;
+            font-size: 40px;
+            z-index: 2;
+            animation: moveBird 10s linear infinite, wingFlap 0.6s ease-in-out infinite alternate, birdAppear var(--cycle) infinite linear;
+        }
+        @keyframes moveBird {
+            from { left: -10%; top: 15%; }
+            to { left: 110%; top: 20%; }
+        }
+        @keyframes wingFlap {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
+        }
+        @keyframes birdAppear {
+            0%, 25%, 90%, 100% { opacity: 0; }
+            35%, 80% { opacity: 1; }
+        }
+
+        .particle {
+            position: absolute;
+            top: -50px;
+            animation: fall 6s linear infinite;
+            z-index: 15;
+            pointer-events: none;
+        }
+        @keyframes fall {
+            to { transform: translateY(105vh) rotate(360deg); }
+        }
+        .particle::after {
+            content: '';
+            animation: partType var(--cycle) infinite linear;
+            font-size: 25px;
+        }
+        @keyframes partType {
+            0%, 25%, 100% { content: '❄️'; opacity: 1; }
+            35%, 68% { content: ''; opacity: 0; }
+            75%, 94% { content: '🍂'; opacity: 1; }
+        }
+
+        .sun {
+            position: absolute;
+            top: 50px; left: 10%;
+            font-size: 80px;
+            animation: sunCycle var(--cycle) infinite linear;
+        }
+        @keyframes sunCycle {
+            0%, 25%, 100% { transform: translateY(150px); opacity: 0; }
+            40%, 65% { transform: translateY(0); opacity: 1; }
+            75% { transform: translateY(50px); opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sky">
+    <div class="season-name"></div>
+    <div class="sun">☀️</div>
+
+    <!-- Дождь -->
+    <div class="rain-container">
+        <div class="rain-drop" style="left: 5%; animation-delay: 0.1s;"></div>
+        <div class="rain-drop" style="left: 15%; animation-delay: 0.4s;"></div>
+        <div class="rain-drop" style="left: 25%; animation-delay: 0.2s;"></div>
+        <div class="rain-drop" style="left: 35%; animation-delay: 0.6s;"></div>
+        <div class="rain-drop" style="left: 45%; animation-delay: 0.3s;"></div>
+        <div class="rain-drop" style="left: 55%; animation-delay: 0.5s;"></div>
+        <div class="rain-drop" style="left: 65%; animation-delay: 0.1s;"></div>
+        <div class="rain-drop" style="left: 75%; animation-delay: 0.7s;"></div>
+        <div class="rain-drop" style="left: 85%; animation-delay: 0.2s;"></div>
+        <div class="rain-drop" style="left: 95%; animation-delay: 0.4s;"></div>
+    </div>
+
+    <div class="bird-fly" style="animation-delay: 0s;">🦅</div>
+    <div class="bird-fly" style="animation-delay: 4s; margin-top: 60px;">🦅</div>
+
+    <div class="particle" style="left: 15%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 1.5s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 4.5s;"></div>
+
+    <div class="snow-container">
+        <div class="snowdrift drift-1"></div>
+        <div class="snowdrift drift-2"></div>
+        <div class="snowdrift drift-3"></div>
+    </div>
+
+    <div class="flower-bed">
+        <span class="flower" style="animation-delay: 0.2s;">🌷</span>
+        <span class="flower" style="animation-delay: 1s;">🌼</span>
+        <span class="flower" style="animation-delay: 0.5s;">🌻</span>
+        <span class="flower" style="animation-delay: 1.5s;">🌸</span>
+        <span class="flower" style="animation-delay: 0.8s;">🌺</span>
+    </div>
+
+    <div class="tree-container">
+        <div class="foliage"></div>
+        <div class="trunk"></div>
+    </div>
+
+    <div class="ground"></div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        section { border: 1px solid #ccc; margin: 20px; padding: 15px; }
+        .relative-container {
+            position: relative;
+            height: 200px;
+            background: #f0f0f0;
+            margin: 30px 0;
+            border: 1px dashed #888;
+        }
+        .absolute-box {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 100px;
+            height: 100px;
+            background: #c0c0c0;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid #555;
+            z-index: 2;
+        }
+        .marker {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: red;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .marker-label {
+            position: absolute;
+            font-size: 10px;
+            color: #333;
+            white-space: nowrap;
+        }
+        .demo-block {
+            width: 80px;
+            height: 80px;
+            background: #ddd;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 80px;
+            float: left;
+            margin-right: 10px;
+        }
+        .back-btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #008CBA; color: white; text-decoration: none; border-radius: 4px; }
+        .back-btn:hover { background-color: #005f6b; }
+        hr { margin: 25px 0; }
+    </style>
+</head>
+<body>
+    <h1>Absolute позиционирование</h1>
+
+    <section>
+        <h2>Базовый пример</h2>
+
+        <div class="relative-container" style="position: relative;">
+            <div class="absolute-box">absolute</div>
+            <div style="position: absolute; top: 5px; left: 35px; font-size: 11px; background: rgba(255,255,255,0.8); padding: 2px 5px;">top:30px</div>
+            <div style="position: absolute; top: 35px; left: 5px; font-size: 11px; background: rgba(255,255,255,0.8); padding: 2px 5px;">left:30px</div>
+            <div class="marker" style="top: 0; left: 0;"></div>
+            <div class="marker-label" style="top: -15px; left: 5px;">(0,0) контейнера</div>
+        </div>
+
+        <hr>
+
+        <h2>Absolute игнорирует поток документа</h2>
+
+        <div class="relative-container" style="height: auto; min-height: 150px; background: #fff; border: 2px solid #aaa;">
+            <div class="demo-block">Блок 1</div>
+            <div class="demo-block">Блок 2</div>
+            <div style="position: absolute; top: 20px; left: 120px; width: 100px; height: 100px; background: #c0c0c0; border: 2px solid #333; text-align: center; line-height: 100px; opacity: 0.9;">absolute</div>
+            <div class="demo-block">Блок 3</div>
+            <div class="demo-block">Блок 4</div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <hr>
+
+        <h2>Разные точки отсчета</h2>
+
+        <div style="border: 1px solid #999; padding: 10px; margin: 10px 0;">
+            <p><strong>Без relative контейнера:</strong></p>
+            <div style="height: 120px; background: #eee; border: 1px dashed #888; margin: 10px 0; position: relative;">
+                <div style="position: absolute; top: 20px; right: 20px; background: #c0c0c0; padding: 10px; border: 1px solid #555;">
+                    absolute (относительно окна)
+                </div>
+                <div style="padding: 10px;">Родитель без position: relative</div>
+            </div>
+
+            <p><strong>С relative контейнером:</strong></p>
+            <div style="height: 120px; background: #eee; border: 1px dashed #888; margin: 10px 0; position: relative;">
+                <div style="position: absolute; top: 20px; right: 20px; background: #c0c0c0; padding: 10px; border: 1px solid #555;">
+                    absolute (относительно контейнера)
+                </div>
+                <div style="padding: 10px;">Родитель с position: relative</div>
+            </div>
+        </div>
+    </section>
+
+    <a href="index.html" class="back-btn">Назад на главную</a>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-light">
+
+    <header class="bg-success text-white py-4 mb-4 shadow-sm">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
+                <h1 class="display-6 fw-semibold mb-0">
+                    <i class="bi bi-tree-fill"></i> Магазин Садовод
+                </h1>
+    </header>
+
+    <main class="container mb-5">
+
+        <!-- ========== СЕКЦИЯ 1: CARD GROUP (первые 3 карточки) ========== -->
+        <div class="mb-5">
+               <div class="card-group shadow-sm">
+                <!-- КАРТОЧКА 1: Зелёный рай (border-success) -->
+                <div class="card border border-2 border-success rounded-0 rounded-start">
+                    <div class="card-header bg-white border-bottom-0 pt-3 pb-0 px-3">
+                        <h5 class="card-title mb-0 fw-semibold text-success">
+                            <i class="bi bi-flower1 text-success me-1"></i> Зелёный рай
+                        </h5>
+                        <small class="text-muted">садовая коллекция</small>
+                    </div>
+                    <div class="card-body pt-2 pb-2">
+                        <img src="https://picsum.photos/id/15/400/250" class="card-img-top img-fluid rounded mb-3" alt="Зеленое растение" style="object-fit: cover; height: 180px;">
+                        <ul class="list-unstyled small text-secondary mb-3">
+                            <li>🌱 Высота: 35–45 см</li>
+                            <li>💧 Полив: 1 раз в 5 дней</li>
+                            <li>☀️ Освещение: яркое рассеянное</li>
+                            <li>🌸 Цветение: круглый год</li>
+                        </ul>
+                        <div class="mt-2">
+                            <form action="#" method="post">
+                                <div class="row g-2">
+                                    <div class="col-7">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Ваше имя" required>
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="number" class="form-control form-control-sm" value="1" min="1">
+                                    </div>
+                                    <div class="col-2">
+                                        <button type="submit" class="btn btn-sm btn-success w-100">→</button>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <input type="email" class="form-control form-control-sm" placeholder="Email для связи">
+                                </div>
+                                <small class="text-muted">Оставьте заявку, и мы привезём здоровое растение</small>
+                            </form>
+                        </div>
+                        <div class="mt-3 small bg-light p-2 rounded text-dark">
+                            <i class="bi bi-chat-left-quote-fill text-success me-1"></i>
+                            Неприхотливое комнатное растение с глянцевыми листьями. Очищает воздух.
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white text-center border-top-0 pb-3">
+                        <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                            <i class="bi bi-star-fill text-warning me-1"></i> Отзывы о товаре
+                        </a>
+                    </div>
+                </div>
+                <!-- КАРТОЧКА 2: Цветочная симфония (border-primary) -->
+                <div class="card border border-2 border-primary">
+                    <div class="card-header bg-white border-bottom-0 pt-3 pb-0 px-3">
+                        <h5 class="card-title mb-0 fw-semibold text-primary">
+                            <i class="bi bi-flower2 text-primary me-1"></i> Цветочная симфония
+                        </h5>
+                        <small class="text-muted">орхидеи и экзоты</small>
+                    </div>
+                    <div class="card-body pt-2 pb-2">
+                        <img src="https://picsum.photos/id/152/400/250" class="card-img-top img-fluid rounded mb-3" alt="Орхидея" style="object-fit: cover; height: 180px;">
+                        <ul class="list-unstyled small text-secondary mb-3">
+                            <li>🌿 Сорт: фаленопсис</li>
+                            <li>💧 Полив: умеренный</li>
+                            <li>🌡️ Температура: 18–25°C</li>
+                            <li>🌸 Цветонос: до 60 см</li>
+                        </ul>
+                        <div class="mt-2">
+                            <form action="#" method="post">
+                                <div class="row g-2">
+                                    <div class="col-7"><input type="text" class="form-control form-control-sm" placeholder="Ваше имя" required></div>
+                                    <div class="col-3"><input type="number" class="form-control form-control-sm" value="1" min="1"></div>
+                                    <div class="col-2"><button type="submit" class="btn btn-sm btn-success w-100">→</button></div>
+                                </div>
+                                <div class="mt-2"><input type="email" class="form-control form-control-sm" placeholder="Email"></div>
+                                <small class="text-muted">Забронируйте орхидею с доставкой</small>
+                            </form>
+                        </div>
+                        <div class="mt-3 small bg-light p-2 rounded text-dark">
+                            <i class="bi bi-chat-left-quote-fill text-primary me-1"></i>
+                            Элегантная орхидея белоснежного оттенка. Цветёт до 3 месяцев.
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white text-center border-top-0 pb-3">
+                        <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                            <i class="bi bi-star-fill text-warning me-1"></i> Отзывы о товаре
+                        </a>
+                    </div>
+                </div>
+                <!-- КАРТОЧКА 3: Сад Мечты (border-warning) -->
+                <div class="card border border-2 border-warning rounded-0 rounded-end">
+                    <div class="card-header bg-white border-bottom-0 pt-3 pb-0 px-3">
+                        <h5 class="card-title mb-0 fw-semibold text-warning">
+                            <i class="bi bi-tree text-warning me-1"></i> Сад Мечты
+                        </h5>
+                        <small class="text-muted">плодовые деревья</small>
+                    </div>
+                    <div class="card-body pt-2 pb-2">
+                        <img src="https://picsum.photos/id/127/400/250" class="card-img-top img-fluid rounded mb-3" alt="Лимон карликовый" style="object-fit: cover; height: 180px;">
+                        <ul class="list-unstyled small text-secondary mb-3">
+                            <li>🍋 Лимон (карликовый)</li>
+                            <li>💧 Полив: 2 раза в неделю</li>
+                            <li>🍃 Аромат: цитрус</li>
+                            <li>🏺 Грунт: дренажный</li>
+                        </ul>
+                        <div class="mt-2">
+                            <form action="#" method="post">
+                                <div class="row g-2">
+                                    <div class="col-7"><input type="text" class="form-control form-control-sm" placeholder="Ваше имя" required></div>
+                                    <div class="col-3"><input type="number" class="form-control form-control-sm" value="1" min="1"></div>
+                                    <div class="col-2"><button type="submit" class="btn btn-sm btn-success w-100">→</button></div>
+                                </div>
+                                <div class="mt-2"><input type="email" class="form-control form-control-sm" placeholder="Email"></div>
+                                <small class="text-muted">Купить саженец лимона</small>
+                            </form>
+                        </div>
+                        <div class="mt-3 small bg-light p-2 rounded text-dark">
+                            <i class="bi bi-chat-left-quote-fill text-warning me-1"></i>
+                            Домашний лимон — плодоносит на 3-й год. Дарит свежесть и витамины.
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white text-center border-top-0 pb-3">
+                        <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                            <i class="bi bi-star-fill text-warning me-1"></i> Отзывы о товаре
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 text-muted small text-center">✨ Карточки склеены в группу (card-group), одинаковой высоты, без промежутков</div>
+        </div>
+
+        <!-- ========== СЕКЦИЯ 2: CARD DECK (следующие 3 карточки) ========== -->
+        <div class="mb-5">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- КАРТОЧКА 4: Кактус-Холл (border-info) -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border border-2 border-info">
+                        <div class="card-header bg-white border-bottom-0 pt-3 pb-0 px-3">
+                            <h5 class="card-title mb-0 fw-semibold text-info">
+                                <i class="bi bi-cactus text-info me-1"></i> Кактус-Холл
+                            </h5>
+                            <small class="text-muted">суккуленты и кактусы</small>
+                        </div>
+                        <div class="card-body pt-2 pb-2">
+                            <img src="https://picsum.photos/id/169/400/250" class="card-img-top img-fluid rounded mb-3" alt="Кактус" style="object-fit: cover; height: 180px;">
+                            <ul class="list-unstyled small text-secondary mb-3">
+                                <li>🌵 Эхинокактус Грузони</li>
+                                <li>💧 Полив: раз в 2-3 недели</li>
+                                <li>☀️ Солнцелюбивый</li>
+                                <li>📏 Размер: до 25 см</li>
+                            </ul>
+                            <div class="mt-2">
+                                <form action="#" method="post">
+                                    <div class="row g-2">
+                                        <div class="col-7"><input type="text" class="form-control form-control-sm" placeholder="Ваше имя" required></div>
+                                        <div class="col-3"><input type="number" class="form-control form-control-sm" value="1" min="1"></div>
+                                        <div class="col-2"><button type="submit" class="btn btn-sm btn-success w-100">→</button></div>
+                                    </div>
+                                    <div class="mt-2"><input type="email" class="form-control form-control-sm" placeholder="Email"></div>
+                                    <small class="text-muted">Хотите такой же кактус?</small>
+                                </form>
+                            </div>
+                            <div class="mt-3 small bg-light p-2 rounded text-dark">
+                                <i class="bi bi-chat-left-quote-fill text-info me-1"></i>
+                                Золотистый кактус с пушистыми колючками. Очень вынослив.
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white text-center border-top-0 pb-3">
+                            <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                                <i class="bi bi-star-fill text-warning me-1"></i> Отзывы о товаре
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- КАРТОЧКА 5: Бамбуковый остров (border-danger) -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border border-2 border-danger">
+                        <div class="card-header bg-white border-bottom-0 pt-3 pb-0 px-3">
+                            <h5 class="card-title mb-0 fw-semibold text-danger">
+                                <i class="bi bi-leaf text-danger me-1"></i> Бамбуковый остров
+                            </h5>
+                            <small class="text-muted">драцена и бамбук</small>
+                        </div>
+                        <div class="card-body pt-2 pb-2">
+                            <img src="https://picsum.photos/id/170/400/250" class="card-img-top img-fluid rounded mb-3" alt="Бамбук" style="object-fit: cover; height: 180px;">
+                            <ul class="list-unstyled small text-secondary mb-3">
+                                <li>🎋 Бамбук счастья</li>
+                                <li>💧 Полив: гидрогель/вода</li>
+                                <li>🌞 Тень/полутень</li>
+                                <li>📐 Высота: 40-60 см</li>
+                            </ul>
+                            <div class="mt-2">
+                                <form action="#" method="post">
+                                    <div class="row g-2">
+                                        <div class="col-7"><input type="text" class="form-control form-control-sm" placeholder="Ваше имя" required></div>
+                                        <div class="col-3"><input type="number" class="form-control form-control-sm" value="1" min="1"></div>
+                                        <div class="col-2"><button type="submit" class="btn btn-sm btn-success w-100">→</button></div>
+                                    </div>
+                                    <div class="mt-2"><input type="email" class="form-control form-control-sm" placeholder="Email"></div>
+                                    <small class="text-muted">Закажите живой бамбук</small>
+                                </form>
+                            </div>
+                            <div class="mt-3 small bg-light p-2 rounded text-dark">
+                                <i class="bi bi-chat-left-quote-fill text-danger me-1"></i>
+                                Символ удачи и благополучия. Растёт в воде или грунте.
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white text-center border-top-0 pb-3">
+                            <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                                <i class="bi bi-star-fill text-warning me-1"></i> Отзывы о товаре
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- КАРТОЧКА 6: Фикус-Хаус (border-secondary) -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border border-2 border-secondary">
+                        <div class="card-header bg-white border-bottom-0 pt-3 pb-0 px-3">
+                            <h5 class="card-title mb-0 fw-semibold text-secondary">
+                                <i class="bi bi-tree-fill text-secondary me-1"></i> Фикус-Хаус
+                            </h5>
+                            <small class="text-muted">крупномеры</small>
+                        </div>
+                        <div class="card-body pt-2 pb-2">
+                            <img src="https://picsum.photos/id/171/400/250" class="card-img-top img-fluid rounded mb-3" alt="Фикус" style="object-fit: cover; height: 180px;">
+                            <ul class="list-unstyled small text-secondary mb-3">
+                                <li>🌳 Фикус Бенджамина</li>
+                                <li>💧 Полив: 1 раз в неделю</li>
+                                <li>✂️ Легко формируется</li>
+                                <li>🌡️ Не любит сквозняки</li>
+                            </ul>
+                            <div class="mt-2">
+                                <form action="#" method="post">
+                                    <div class="row g-2">
+                                        <div class="col-7"><input type="text" class="form-control form-control-sm" placeholder="Ваше имя" required></div>
+                                        <div class="col-3"><input type="number" class="form-control form-control-sm" value="1" min="1"></div>
+                                        <div class="col-2"><button type="submit" class="btn btn-sm btn-success w-100">→</button></div>
+                                    </div>
+                                    <div class="mt-2"><input type="email" class="form-control form-control-sm" placeholder="Email"></div>
+                                    <small class="text-muted">Крупномер с доставкой</small>
+                                </form>
+                            </div>
+                            <div class="mt-3 small bg-light p-2 rounded text-dark">
+                                <i class="bi bi-chat-left-quote-fill text-secondary me-1"></i>
+                                Классическое офисное растение с пышной кроной. Очищает воздух.
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white text-center border-top-0 pb-3">
+                            <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                                <i class="bi bi-star-fill text-warning me-1"></i> Отзывы о товаре
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 text-muted small text-center">🎴 Равная высота, отступы между карточками (row-cols + g-4) — имитация классического deck</div>
+        </div>
+
+        <!-- ========== СЕКЦИЯ 3: COLUMN (последние 3 карточки) ========== -->
+        <div class="mb-4">
+            <div class="row">
+                <!-- КАРТОЧКА 7: Суккулент-Маркет (border-dark) -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm border border-2 border-dark">
+                        <div class="card-header bg-white border-bottom-0 pt-3 pb-0 px-3">
+                            <h5 class="card-title mb-0 fw-semibold text-dark">
+                                <i class="bi bi-gem text-dark me-1"></i> Суккулент-Маркет
+                            </h5>
+                            <small class="text-muted">каменные розы</small>
+                        </div>
+                        <div class="card-body pt-2 pb-2">
+                            <img src="https://picsum.photos/id/173/400/250" class="card-img-top img-fluid rounded mb-3" alt="Суккуленты" style="object-fit: cover; height: 180px;">
+                            <ul class="list-unstyled small text-secondary mb-3">
+                                <li>🌵 Эчеверия (каменная роза)</li>
+                                <li>💧 Полив: раз в 10–14 дней</li>
+                                <li>☀️ Яркий свет</li>
+                                <li>🏺 Диаметр: 7-10 см</li>
+                            </ul>
+                            <div class="mt-2">
+                                <form action="#" method="post">
+                                    <div class="row g-2">
+                                        <div class="col-7"><input type="text" class="form-control form-control-sm" placeholder="Ваше имя" required></div>
+                                        <div class="col-3"><input type="number" class="form-control form-control-sm" value="1" min="1"></div>
+                                        <div class="col-2"><button type="submit" class="btn btn-sm btn-success w-100">→</button></div>
+                                    </div>
+                                    <div class="mt-2"><input type="email" class="form-control form-control-sm" placeholder="Email"></div>
+                                    <small class="text-muted">Набор из 3 суккулентов</small>
+                                </form>
+                            </div>
+                            <div class="mt-3 small bg-light p-2 rounded text-dark">
+                                <i class="bi bi-chat-left-quote-fill text-dark me-1"></i>
+                                Нежные розетки, не требующие частого ухода. Идеальны для подоконника.
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white text-center border-top-0 pb-3">
+                            <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                                <i class="bi bi-star-fill text-warning me-1"></i> Отзывы о товаре
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- КАРТОЧКА 8: Пальмовая аллея (border-success) -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm border border-2 border-success">
+                        <div class="card-header bg-white border-bottom-0 pt-3 pb-0 px-3">
+                            <h5 class="card-title mb-0 fw-semibold text-success">
+                                <i class="bi bi-tree text-success me-1"></i> Пальмовая аллея
+                            </h5>
+                            <small class="text-muted">комнатные пальмы</small>
+                        </div>
+                        <div class="card-body pt-2 pb-2">
+                            <img src="https://picsum.photos/id/175/400/250" class="card-img-top img-fluid rounded mb-3" alt="Пальма" style="object-fit: cover; height: 180px;">
+                            <ul class="list-unstyled small text-secondary mb-3">
+                                <li>🌴 Хамедорея (бамбуковая пальма)</li>
+                                <li>💧 Влажность: опрыскивание</li>
+                                <li>🌿 Очищает воздух</li>
+                                <li>📏 Высота до 1,2 м</li>
+                            </ul>
+                            <div class="mt-2">
+                                <form action="#" method="post">
+                                    <div class="row g-2">
+                                        <div class="col-7"><input type="text" class="form-control form-control-sm" placeholder="Ваше имя" required></div>
+                                        <div class="col-3"><input type="number" class="form-control form-control-sm" value="1" min="1"></div>
+                                        <div class="col-2"><button type="submit" class="btn btn-sm btn-success w-100">→</button></div>
+                                    </div>
+                                    <div class="mt-2"><input type="email" class="form-control form-control-sm" placeholder="Email"></div>
+                                    <small class="text-muted">Купить пальму в кашпо</small>
+                                </form>
+                            </div>
+                            <div class="mt-3 small bg-light p-2 rounded text-dark">
+                                <i class="bi bi-chat-left-quote-fill text-success me-1"></i>
+                                Элегантная пальма, теневыносливая. Создаёт тропический уют.
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white text-center border-top-0 pb-3">
+                            <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                                <i class="bi bi-star-fill text-warning me-1"></i> Отзывы о товаре
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- КАРТОЧКА 9: Зелёная аптека (border-danger) -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm border border-2 border-danger">
+                        <div class="card-header bg-white border-bottom-0 pt-3 pb-0 px-3">
+                            <h5 class="card-title mb-0 fw-semibold text-danger">
+                                <i class="bi bi-flower3 text-danger me-1"></i> Зелёная аптека
+                            </h5>
+                            <small class="text-muted">лекарственные растения</small>
+                        </div>
+                        <div class="card-body pt-2 pb-2">
+                            <img src="https://picsum.photos/id/177/400/250" class="card-img-top img-fluid rounded mb-3" alt="Алоэ" style="object-fit: cover; height: 180px;">
+                            <ul class="list-unstyled small text-secondary mb-3">
+                                <li>🌱 Алоэ вера</li>
+                                <li>💧 Полив: редкий</li>
+                                <li>🍃 Лечебные свойства</li>
+                                <li>☀️ Любит солнце</li>
+                            </ul>
+                            <div class="mt-2">
+                                <form action="#" method="post">
+                                    <div class="row g-2">
+                                        <div class="col-7"><input type="text" class="form-control form-control-sm" placeholder="Ваше имя" required></div>
+                                        <div class="col-3"><input type="number" class="form-control form-control-sm" value="1" min="1"></div>
+                                        <div class="col-2"><button type="submit" class="btn btn-sm btn-success w-100">→</button></div>
+                                    </div>
+                                    <div class="mt-2"><input type="email" class="form-control form-control-sm" placeholder="Email"></div>
+                                    <small class="text-muted">Приобретите целебное алоэ</small>
+                                </form>
+                            </div>
+                            <div class="mt-3 small bg-light p-2 rounded text-dark">
+                                <i class="bi bi-chat-left-quote-fill text-danger me-1"></i>
+                                Домашний доктор на подоконнике. Сок помогает при ожогах.
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white text-center border-top-0 pb-3">
+                            <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                                <i class="bi bi-star-fill text-warning me-1"></i> Отзывы о товаре
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-1 text-muted small text-center">📌 Каждая карточка в отдельной колонке (col-md-4) — классическая сетка</div>
+        </div>
+
+    </main>
+
+    <!-- ПОДВАЛ: тёмный фон + светлый текст, контакты -->
+    <footer class="bg-dark text-white py-4 mt-2 border-top border-secondary">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 text-md-start mb-2 mb-md-0">
+                    <i class="bi bi-shop"></i> Магазин Садовод
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <i class="bi bi-telephone-fill"></i> +7 (999) 123-45-67 &nbsp;|&nbsp;
+                    <i class="bi bi-envelope-fill"></i> info@sadovod.ru
+                </div>
+            </div>
+            <hr class="bg-secondary my-2">
+            <small class="text-white-50">© 2025 Зелёная коллекция.</small>
+        </div>
+    </footer>
+
+</body>
+</html>

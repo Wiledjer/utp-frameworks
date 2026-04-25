@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-4">
+
+    <h1 class="mb-4">Таблицы Bootstrap</h1>
+
+    <h2 class="mt-4">1. Лёгкая таблица (class="table")</h2>
+    <table class="table">
+        <thead>
+            <tr><th>Имя</th><th>Роль</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Анна</td><td>Дизайнер</td></tr>
+            <tr><td>Иван</td><td>Разработчик</td></tr>
+            <tr><td>Мария</td><td>Менеджер</td></tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-4">2. Полосатая таблица (table-striped)</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr><th>Сотрудник</th><th>Отдел</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Анна</td><td>Дизайн</td></tr>
+            <tr><td>Иван</td><td>Разработка</td></tr>
+            <tr><td>Мария</td><td>Управление</td></tr>
+            <tr><td>Петр</td><td>Аналитика</td></tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-4">3. Таблица с рамками (table-bordered)</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr><th>Проект</th><th>Статус</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Сайт компании</td><td>Активен</td></tr>
+            <tr><td>Мобильное приложение</td><td>В разработке</td></tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-4">4. Таблица без границ (table-borderless)</h2>
+    <table class="table table-borderless">
+        <thead>
+            <tr><th>Название</th><th>Значение</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Версия</td><td>1.0.0</td></tr>
+            <tr><td>Лицензия</td><td>MIT</td></tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-4">5. Таблица с hover эффектом (table-hover)</h2>
+    <table class="table table-hover">
+        <thead>
+            <tr><th>Клиент</th><th>Сумма</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>ООО</td><td>150 000 ₽</td></tr>
+            <tr><td>ИП</td><td>75 000 ₽</td></tr>
+            <tr><td>АО"</td><td>320 000 ₽</td></tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-4">6. Изменение цвета строк (table-primary, table-secondary и др.)</h2>
+    <table class="table">
+        <tbody>
+            <tr class="table-primary"><td>table-primary</td><td>Синий (информация)</td></tr>
+            <tr class="table-secondary"><td>table-secondary</td><td>Серый (второстепенный)</td></tr>
+            <tr class="table-success"><td>table-success</td><td>Зелёный (успех)</td></tr>
+            <tr class="table-danger"><td>table-danger</td><td>Красный (опасность)</td></tr>
+            <tr class="table-warning"><td>table-warning</td><td>Жёлтый (предупреждение)</td></tr>
+            <tr class="table-info"><td>table-info</td><td>Голубой (справка)</td></tr>
+            <tr class="table-light"><td>table-light</td><td>Светлый (нейтральный)</td></tr>
+            <tr class="table-dark"><td>table-dark</td><td>Тёмный (акцент)</td></tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-4">7. Адаптивная таблица (table-responsive) — горизонтальная прокрутка на маленьких экранах</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Параметр</th><th>Значение</th><th>Описание</th><th>Дополнительно</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ширина</td><td>100%</td><td>Адаптивность</td><td>Скролл при необходимости</td>
+                </tr>
+                <tr>
+                    <td>Отзывчивость</td><td>Да</td><td>Работает на всех устройствах</td><td>table-responsive</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 class="mt-4">8. Выравнивание текста по вертикали (align-top, align-middle, align-bottom)</h2>
+    <table class="table table-bordered" style="height: 200px;">
+        <thead>
+            <tr><th>Класс</th><th>Пример (ячейка с разной высотой)</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>align-top</td>
+                <td class="align-top" style="height: 80px;">
+                    Текст прижат к верху<br>Вторая строка
+                </td>
+            </tr>
+            <tr>
+                <td>align-middle</td>
+                <td class="align-middle" style="height: 80px;">
+                    Текст по центру по вертикали
+                </td>
+            </tr>
+            <tr>
+                <td>align-bottom</td>
+                <td class="align-bottom" style="height: 80px;">
+                    Текст прижат к низу
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="mt-4">Дополнительно: горизонтальное выравнивание (text-start, text-center, text-end)</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr><th>Класс</th><th>Пример</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>text-start</td><td class="text-start">По левому краю</td></tr>
+            <tr><td>text-center</td><td class="text-center">По центру</td></tr>
+            <tr><td>text-end</td><td class="text-end">По правому краю</td></tr>
+        </tbody>
+    </table>
+    <h2 class="mt-4">Разные отступы в ячейках</h2>
+    <table class="table table-bordered">
+        <thead><tr><th>Отступ</th><th>Содержимое</th></tr></thead>
+        <tbody>
+            <tr><td class="p-1">p-1 (маленький)</td><td class="p-1">текст</td></tr>
+            <tr><td class="p-3">p-3 (увеличенный)</td><td class="p-3">больше места</td></tr>
+            <tr><td class="px-5 py-2">px-5 py-2</td><td class="px-5 py-2">горизонталь 3rem, вертикаль 0.5rem</td></tr>
+        </tbody>
+    </table>
+
+</table>
+</body>
+</html>

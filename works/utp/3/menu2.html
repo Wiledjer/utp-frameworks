@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-wrapper {
+            border: 2px solid #333;
+            padding: 20px;
+            display: inline-block;
+            min-width: 700px;
+            background: #f9f9f9;
+            margin: 20px;
+        }
+        .vertical-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .main-item {
+            position: relative;
+            background: #e0e0e0;
+            border: 1px solid #aaa;
+        }
+        .main-item summary {
+            display: block;
+            padding: 12px 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+        }
+        .main-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .submenu.level2 {
+            width: 100%;
+            background: white;
+            border: 1px solid #888;
+            border-top: none;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        .level2-item {
+            position: relative;
+            background: #f0f0f0;
+            border: 1px dashed #666;
+        }
+        .level2-item summary {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            cursor: pointer;
+        }
+        .level2-item img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+        .level2-item summary span {
+            flex: 1;
+            text-align: left;
+        }
+        .submenu.level3 {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            min-width: 150px;
+            background: #e8e8e8;
+            border: 1px dotted #444;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            z-index: 20;
+        }
+
+        .level3-item {
+            padding: 4px 8px;
+            background: #fff;
+            border: 1px solid #ccc;
+            white-space: nowrap;
+        }
+
+        .main-item:not([open]) .submenu.level2,
+        .level2-item:not([open]) .submenu.level3 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <div class="menu-wrapper">
+        <div class="vertical-menu">
+            <details class="main-item">
+                <summary>Пункт 1</summary>
+                <div class="submenu level2">
+                    <details class="level2-item">
+                        <summary>
+                            <span>меню 1</span>
+                            <img src="1.png" width="20" height="20" alt="иконка">
+                        </summary>
+                        <div class="submenu level3">
+                            <div class="level3-item">1.1</div>
+                            <div class="level3-item">2.1</div>
+                            <div class="level3-item">3.1</div>
+                        </div>
+                    </details>
+                    <details class="level2-item">
+                        <summary>
+                            <span>меню 2</span>
+                            <img src="1.png" width="20" height="20" alt="иконка">
+                        </summary>
+                        <div class="submenu level3">
+                            <div class="level3-item">1.1</div>
+                            <div class="level3-item">2.1</div>
+                            <div class="level3-item">3.1</div>
+                        </div>
+                    </details>
+                    <details class="level2-item">
+                        <summary>
+                            <span>меню 3</span>
+                            <img src="1.png" width="20" height="20" alt="иконка">
+                        </summary>
+                        <div class="submenu level3">
+                            <div class="level3-item">1.1</div>
+                            <div class="level3-item">2.1</div>
+                            <div class="level3-item">3.1</div>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <details class="main-item">
+                <summary>Пункт 2</summary>
+                <div class="submenu level2">
+                    <details class="level2-item">
+                        <summary>
+                            <span>меню 1</span>
+                            <img src="1.png" width="20" height="20" alt="иконка">
+                        </summary>
+                        <div class="submenu level3">
+                            <div class="level3-item">1.1</div>
+                            <div class="level3-item">2.1</div>
+                            <div class="level3-item">3.1</div>
+                        </div>
+                    </details>
+                    <details class="level2-item">
+                        <summary>
+                            <span>меню 2</span>
+                            <img src="1.png" width="20" height="20" alt="иконка">
+                        </summary>
+                        <div class="submenu level3">
+                            <div class="level3-item">1.1</div>
+                            <div class="level3-item">2.1</div>
+                            <div class="level3-item">3.1</div>
+                        </div>
+                    </details>
+                    <details class="level2-item">
+                        <summary>
+                            <span>меню 3</span>
+                            <img src="1.png" width="20" height="20" alt="иконка">
+                        </summary>
+                        <div class="submenu level3">
+                            <div class="level3-item">1.1</div>
+                            <div class="level3-item">2.1</div>
+                            <div class="level3-item">3.1</div>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <details class="main-item">
+                <summary>Пункт 3</summary>
+                <div class="submenu level2">
+                    <details class="level2-item">
+                        <summary>
+                            <span>меню 1</span>
+                            <img src="1.png" width="20" height="20" alt="иконка">
+                        </summary>
+                        <div class="submenu level3">
+                            <div class="level3-item">1.1</div>
+                            <div class="level3-item">2.1</div>
+                            <div class="level3-item">3.1</div>
+                        </div>
+                    </details>
+                    <details class="level2-item">
+                        <summary>
+                            <span>меню 2</span>
+                            <img src="1.png" width="20" height="20" alt="иконка">
+                        </summary>
+                        <div class="submenu level3">
+                            <div class="level3-item">1.1</div>
+                            <div class="level3-item">2.1</div>
+                            <div class="level3-item">3.1</div>
+                        </div>
+                    </details>
+                    <details class="level2-item">
+                        <summary>
+                            <span>меню 3</span>
+                            <img src="1.png" width="20" height="20" alt="иконка">
+                        </summary>
+                        <div class="submenu level3">
+                            <div class="level3-item">1.1</div>
+                            <div class="level3-item">2.1</div>
+                            <div class="level3-item">3.1</div>
+                        </div>
+                    </details>
+                </div>
+            </details>
+        </div>
+    </div>
+</center>
+</body>
+</html>
