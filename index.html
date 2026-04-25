@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Моё портфолио</title>
-  <!-- Подключаем минималистичный шрифт -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -48,7 +47,6 @@
       font-size: 0.95rem;
     }
 
-    /* Сетка предметов */
     .subjects {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -151,7 +149,6 @@
       color: inherit;
     }
 
-    /* Стили для кнопки "Назад" в просмотрщике */
     .viewer-header {
       padding: 12px 20px;
       background: #f8f9fa;
@@ -176,11 +173,17 @@
     .btn-back:hover {
       background: #e9ecef;
     }
+
+    .university-emblem {
+      display: block;
+      margin: 2rem auto 0;
+      max-width: 100px;
+      opacity: 0.85;
+    }
   </style>
 </head>
 <body>
 
-  <!-- ========== ГЛАВНАЯ СТРАНИЦА ========== -->
   <div class="container" id="main-content">
     <header>
       <h1>Мои учебные работы</h1>
@@ -188,7 +191,6 @@
     </header>
 
     <div class="subjects" id="subjects-container">
-      <!-- Предмет: УТП -->
       <div class="subject-card">
         <h2>УТП</h2>
         <ul class="work-list">
@@ -212,26 +214,25 @@
           </li>
           <li>
             <a href="works/utp/3/menu2.html">
+              <span class="work-tag">№3*</span>
+              <span>Работа 3 (доп.)</span>
+            </a>
+          </li>
+          <li>
+            <a href="works/utp/4/film.html">
               <span class="work-tag">№4</span>
               <span>Работа 4</span>
             </a>
           </li>
           <li>
-            <a href="works/utp/4/film.html">
+            <a href="works/utp/5/index.html">
               <span class="work-tag">№5</span>
               <span>Работа 5</span>
-            </a>
-          </li>
-          <li>
-            <a href="works/utp/5/index.html">
-              <span class="work-tag">№6</span>
-              <span>Работа 6</span>
             </a>
           </li>
         </ul>
       </div>
 
-      <!-- Предмет: Фреймворки -->
       <div class="subject-card">
         <h2>Фреймворки</h2>
         <ul class="work-list">
@@ -275,12 +276,15 @@
       </div>
     </div>
 
+    <img class="university-emblem" 
+         src="works/bam.png" 
+         alt="Герб МГТУ им. Н. Э. Баумана">
+
     <footer>
-      © 2026 · УТП & Фреймворки веб-приложений
+      © 2026 · Портфолио студента
     </footer>
   </div>
 
-  <!-- ========== ПРОСМОТРЩИК РАБОТ (IFRAME) ========== -->
   <div id="viewer" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:999;">
     <div class="viewer-header">
       <button class="btn-back" onclick="closeViewer()">← Назад к портфолио</button>
@@ -288,27 +292,22 @@
     <iframe id="frame" style="width:100%; height:calc(100% - 50px); border:none;"></iframe>
   </div>
 
-  <!-- ========== СКРИПТЫ ========== -->
   <script>
-    // Функция закрытия просмотрщика и возврата к списку работ
     function closeViewer() {
       document.getElementById('viewer').style.display = 'none';
       document.getElementById('frame').src = '';
       document.getElementById('main-content').style.display = 'block';
     }
 
-    // Вешаем обработчики на все ссылки работ
     const workLinks = document.querySelectorAll('.work-list a');
     workLinks.forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const url = this.href;
 
-        // Показываем просмотрщик
         document.getElementById('viewer').style.display = 'block';
         document.getElementById('frame').src = url;
 
-        // Скрываем главную страницу
         document.getElementById('main-content').style.display = 'none';
       });
     });
