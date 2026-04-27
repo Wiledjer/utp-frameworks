@@ -1,0 +1,452 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background: #fafafa;
+  color: #111;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.2rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.legends-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+
+.legend-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.legend-photo {
+  flex-shrink: 0;
+  width: 100px;
+  height: 120px;
+  border: 1px solid #aaa;
+  background: #ddd;
+  overflow: hidden;
+}
+
+.legend-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.legend-info {
+  flex: 1;
+}
+
+.legend-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.legend-nick {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.menu a:hover {
+  border-bottom-color: #999;
+}
+
+.menu a.active {
+  border-bottom-color: #111;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  flex: 1;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.subhead {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.75;
+}
+
+.card-grid {
+  display: flex;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 200px;
+  padding: 1.8rem 1.2rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.quote-block {
+  margin: 4rem 0 2rem;
+  position: relative;
+  padding: 2rem 0 1rem;
+  text-align: right;
+}
+
+.quote-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 2px;
+  background: #333;
+  animation: stretchLine 3s infinite alternate ease-in-out;
+}
+
+@keyframes stretchLine {
+  0% { width: 60px; opacity: 0.5; }
+  100% { width: 180px; opacity: 1; }
+}
+
+.quote-block p {
+  font-size: 1.8rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.quote-author {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+.timeline {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  border-bottom: 1px dashed #bbb;
+  padding-bottom: 0.8rem;
+}
+
+.year {
+  font-weight: 700;
+  font-size: 1.5rem;
+  min-width: 120px;
+}
+
+.desc {
+  font-size: 1.1rem;
+}
+
+.evolution-box {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: #fff;
+  border-left: 6px solid #222;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.evolve-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ccc;
+  position: relative;
+  animation: pulseIcon 2s infinite;
+}
+
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); background: #aaa; }
+  50% { transform: scale(1.3); background: #444; }
+}
+
+.rules-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.rule-card {
+  flex: 1 1 200px;
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.rule-card:hover {
+  border-color: #888;
+  background: #f4f4f4;
+}
+
+.rule-num {
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #aaa;
+  margin-bottom: 0.8rem;
+}
+
+.rule-card h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ring-animation {
+  margin: 4rem 0 1rem;
+  height: 100px;
+  background: #ececec;
+  position: relative;
+  overflow: hidden;
+}
+
+.rope {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  left: 0;
+  z-index: 2;
+}
+
+.rope:nth-child(3) {
+  top: 75%;
+  background: #ffffff;
+  box-shadow: 0 0 5px rgba(255,255,255,0.3);
+}
+
+.rope:nth-child(2) {
+  top: 45%;
+  background: #0055ff;
+}
+
+.rope:nth-child(1) {
+  top: 20%;
+  background: #ff0000;
+}
+
+.center-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  color: #444;
+  animation: textGlow 2.5s infinite alternate;
+}
+
+@keyframes textGlow {
+  from { text-shadow: 0 0 0 #aaa; }
+  to { text-shadow: 0 0 8px #333; }
+}
+
+.floating-punch {
+  position: relative;
+  height: 80px;
+  margin-top: 3rem;
+}
+
+.punch-effect {
+  position: absolute;
+  left: 0;
+  font-size: 2.8rem;
+  animation: floatPunch 4s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.ring-animation {
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.boxer {
+  width: 40px;
+  height: 60px;
+  position: absolute;
+  bottom: 10px;
+  border-radius: 5px 5px 0 0;
+  z-index: 5;
+}
+
+.boxer-left {
+  background: #d32f2f;
+  left: 10%;
+  border-right: 15px solid #ff5252;
+  animation: fightLeft 10s infinite;
+}
+
+.boxer-right {
+  background: #1976d2;
+  right: 10%;
+  border-left: 15px solid #448aff;
+  animation: fightRight 10s infinite;
+}
+
+.knockout-text {
+  position: absolute;
+  top: 20%;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ff1744;
+  opacity: 0;
+  z-index: 6;
+  animation: koShow 10s infinite;
+}
+
+@keyframes fightLeft {
+  0% { left: 10%; }
+  20% { left: 35%; }
+  25% { transform: translateX(10px); }
+  30% { transform: translateX(0); }
+  35% { transform: translateX(15px); }
+  40% { transform: translateX(0); }
+  70% { left: 35%; transform: rotate(0deg); opacity: 1; }
+  80% { left: 35%; transform: rotate(-90deg) translateY(30px); opacity: 0.8; }
+  95% { left: 35%; transform: rotate(-90deg) translateY(30px); opacity: 0.8; }
+  100% { left: 10%; transform: rotate(0deg); }
+}
+
+@keyframes fightRight {
+  0% { right: 10%; }
+  20% { right: 70%; }
+  25% { transform: translateX(-5px); }
+  30% { transform: translateX(0); }
+  35% { transform: translateX(-20px); }
+  40% { transform: translateX(0); }
+  80% { right: 56%; transform: scale(1.2); }
+  95% { right: 35%; transform: scale(1.2); }
+  100% { right: 10%; transform: scale(1); }
+}
+
+@keyframes koShow {
+  0%, 75% { opacity: 0; transform: scale(0.5); }
+  80% { opacity: 1; transform: scale(1.2); }
+  95% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; }
+}
+
+@keyframes floatPunch {
+  0% { left: 0%; transform: rotate(0deg) scale(1); opacity: 0.7; }
+  30% { left: 35%; transform: rotate(10deg) scale(1.1); opacity: 1; }
+  70% { left: 65%; transform: rotate(-5deg) scale(1); opacity: 0.9; }
+  100% { left: 90%; transform: rotate(0deg) scale(0.9); opacity: 0.5; }
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+  animation: glitchSkew 4s infinite alternate;
+}
+
+@keyframes glitchSkew {
+  0% { transform: skew(0deg); text-shadow: 2px 0 #ccc, -2px 0 #eee; }
+  20% { transform: skew(2deg); text-shadow: 3px 0 #bbb, -3px 0 #ddd; }
+  40% { transform: skew(-1deg); }
+  60% { transform: skew(1deg); }
+  80% { transform: skew(-2deg); text-shadow: 1px 0 #aaa, -1px 0 #ccc; }
+  100% { transform: skew(0deg); }
+}
+
+.ali-image {
+  margin: -5rem 0 1rem;
+  text-align: center;
+}
+
+.ali-image img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  display: block;
+  margin: 0 auto;
+}
+
+.caption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    gap: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .timeline-item {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
