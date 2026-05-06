@@ -316,26 +316,56 @@
     <iframe id="frame" style="width:100%; height:calc(100% - 50px); border:none;"></iframe>
   </div>
 
-  <script>
-    function closeViewer() {
-      document.getElementById('viewer').style.display = 'none';
-      document.getElementById('frame').src = '';
-      document.getElementById('main-content').style.display = 'block';
+<script>
+  const linksMap = new Map();
+  document.querySelectorAll('.work-list a').forEach(link => {
+    const url = link.getAttribute('href');
+    const slug = url.replace(/\//g, '-').replace(/\.html$/, '');
+    const hash = 'work-' + slug;
+    linksMap.set(hash, url);
+    link.dataset.hash = hash;
+  });
+
+  function showPortfolio() {
+    document.getElementById('viewer').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+    document.getElementById('frame').src = '';
+  }
+
+  function showWork(url) {
+    document.getElementById('viewer').style.display = 'block';
+    document.getElementById('main-content').style.display = 'none';
+    document.getElementById('frame').src = url;
+  }
+
+  function onHashChange() {
+    const hash = location.hash.slice(1);
+    if (!hash || !linksMap.has(hash)) {
+      showPortfolio();
+    } else {
+      const url = linksMap.get(hash);
+      showWork(url);
     }
+  }
 
-    const workLinks = document.querySelectorAll('.work-list a');
-    workLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const url = this.href;
+  window.addEventListener('hashchange', onHashChange);
 
-        document.getElementById('viewer').style.display = 'block';
-        document.getElementById('frame').src = url;
-
-        document.getElementById('main-content').style.display = 'none';
-      });
+  document.querySelectorAll('.work-list a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const hash = this.dataset.hash;
+      if (hash) {
+        location.hash = hash;
+      }
     });
-  </script>
+  });
+
+  document.querySelector('.btn-back').addEventListener('click', function() {
+    location.hash = '';
+  });
+
+  window.addEventListener('DOMContentLoaded', onHashChange);
+</script>
 
 </body>
 </html>
