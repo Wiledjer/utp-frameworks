@@ -1,0 +1,393 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #eef2f7;
+  --text: #101827;
+  --muted: #667085;
+  --border: #e3e7ef;
+  --accent: #2563eb;
+  --accent-soft: #dbeafe;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --shadow: 0 24px 80px rgba(16, 24, 39, 0.08);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0c111d;
+  --surface: #111827;
+  --surface-2: #172033;
+  --text: #f8fafc;
+  --muted: #a8b3c5;
+  --border: #26334c;
+  --accent: #60a5fa;
+  --accent-soft: #1e3a5f;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 30rem),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 4px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 4px;
+}
+
+.app-header {
+  display: flex;
+  width: min(1180px, calc(100% - 2rem));
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem auto;
+}
+
+.back-link,
+.theme-button,
+.filter-button,
+.primary-button,
+.task-action {
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.back-link,
+.theme-button,
+.filter-button,
+.task-action {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.back-link,
+.theme-button {
+  padding: 0.75rem 1rem;
+}
+
+.app-shell {
+  display: grid;
+  width: min(1180px, calc(100% - 2rem));
+  gap: 1rem;
+  margin: 0 auto 3rem;
+}
+
+.hero-panel,
+.panel,
+.stat-card {
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.hero-panel {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+  align-items: end;
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1,
+h2 {
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  max-width: 13ch;
+  font-size: clamp(3rem, 8vw, 6rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.hero-panel p:not(.eyebrow),
+.task-card p,
+.panel-heading p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.hero-panel p:not(.eyebrow) {
+  max-width: 64ch;
+  margin-top: 1rem;
+  font-size: 1.08rem;
+}
+
+.progress-card {
+  display: grid;
+  min-height: 210px;
+  align-content: center;
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  background: var(--surface-2);
+}
+
+.progress-card__label,
+.progress-card span:last-child {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.progress-card strong {
+  margin: 0.4rem 0;
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  padding: 1.25rem;
+  box-shadow: none;
+}
+
+.stat-card span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 2rem;
+}
+
+.board-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.panel {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.add-panel {
+  position: sticky;
+  top: 1rem;
+}
+
+.panel-heading {
+  margin-bottom: 1.5rem;
+}
+
+.panel-heading--row {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.task-form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.primary-button {
+  border: 0;
+  padding: 0.95rem 1rem;
+  background: var(--accent);
+  color: white;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.filter-button,
+.task-action {
+  padding: 0.55rem 0.75rem;
+}
+
+.filter-button.is-active {
+  border-color: transparent;
+  background: var(--text);
+  color: var(--surface);
+}
+
+.tasks-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.task-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  border: 1px solid var(--border);
+  border-radius: 1.35rem;
+  padding: 1rem;
+  background: var(--surface-2);
+}
+
+.task-card h3 {
+  margin: 0 0 0.35rem;
+  line-height: 1.2;
+}
+
+.task-card p {
+  margin: 0;
+}
+
+.task-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.8rem;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.badge--todo {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.badge--progress {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge--done {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.task-card__actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.task-action[data-delete] {
+  color: var(--danger);
+}
+
+.empty-state {
+  border: 1px dashed var(--border);
+  border-radius: 1.35rem;
+  padding: 2rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 920px) {
+  .hero-panel,
+  .board-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .add-panel {
+    position: static;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-heading--row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .app-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .back-link,
+  .theme-button {
+    text-align: center;
+  }
+
+  .hero-panel,
+  .panel,
+  .stat-card {
+    border-radius: 1.35rem;
+  }
+
+  .task-card {
+    grid-template-columns: 1fr;
+  }
+}
