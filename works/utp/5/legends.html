@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+
+  <style id="portfolio-return-link-style">
+    .portfolio-return-link {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 99999;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border: 1px solid rgba(17, 24, 39, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #111827;
+      font-family: Inter, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .portfolio-return-link:hover {
+      transform: translateY(-1px);
+      background: #ffffff;
+      color: #111827;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.2);
+    }
+
+    .portfolio-return-link:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 640px) {
+      .portfolio-return-link {
+        top: 10px;
+        left: 10px;
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="portfolio-return-link" href="../../../labs/index.html" aria-label="Вернуться к списку всех лабораторных работ">← К лабораторным</a>
+
+  <nav class="menu">
+    <a href="index.html">Главная</a>
+    <a href="history.html">История</a>
+    <a href="rules.html">Правила</a>
+    <a href="legends.html" class="active">Легенды</a>
+  </nav>
+
+  <main class="container">
+    <h1>Легенды ринга</h1>
+
+    <div class="legends-grid">
+      <!-- Мохаммед Али -->
+      <div class="legend-item">
+        <div class="legend-photo">
+          <img src="ali2.jpg" alt="Мохаммед Али">
+        </div>
+        <div class="legend-info">
+          <div class="legend-name">Мохаммед Али</div>
+          <div class="legend-nick">The Greatest</div>
+          <p>56 побед (37 нокаутов). Олимпийский чемпион 1960.</p>
+        </div>
+      </div>
+
+      <!-- Шугар Рэй Робинсон -->
+      <div class="legend-item">
+        <div class="legend-photo">
+          <img src="sugar.jpg" alt="Шугар Рэй Робинсон">
+        </div>
+        <div class="legend-info">
+          <div class="legend-name">Шугар Рэй Робинсон</div>
+          <div class="legend-nick">Sugar</div>
+          <p>173 победы. Лучший боксёр pound-for-pound в истории.</p>
+        </div>
+      </div>
+
+      <!-- Рокки Марчиано -->
+      <div class="legend-item">
+        <div class="legend-photo">
+          <img src="rokki.jpg" alt="Рокки Марчиано">
+        </div>
+        <div class="legend-info">
+          <div class="legend-name">Рокки Марчиано</div>
+          <div class="legend-nick">The Brockton Blockbuster</div>
+          <p>49-0, завершил карьеру непобеждённым чемпионом.</p>
+        </div>
+      </div>
+
+      <!-- Джо Луис -->
+      <div class="legend-item">
+        <div class="legend-photo">
+          <img src="lo.jpg" alt="Джо Луис">
+        </div>
+        <div class="legend-info">
+          <div class="legend-name">Джо Луис</div>
+          <div class="legend-nick">Brown Bomber</div>
+          <p>66 побед. 25 успешных защит титула в тяжёлом весе.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="floating-punch">
+      <span class="punch-effect">🥊</span>
+    </div>
+  </main>
+</body>
+</html>

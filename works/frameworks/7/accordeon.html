@@ -1,0 +1,583 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body { background: #f5f5f5; padding: 20px; font-family: Arial, sans-serif; }
+    h4 { margin-top: 30px; margin-bottom: 10px; }
+    .section-label { font-size: 13px; color: gray; margin-bottom: 6px; }
+
+    #acc-custom .accordion-button {
+      background-color: #f8f9fa;
+      color: #1e3a8a;
+      font-weight: 600;
+      border-radius: 12px !important;
+      margin-bottom: 4px;
+    }
+    #acc-custom .accordion-button:focus {
+      box-shadow: none;
+      border-color: #3b82f6;
+    }
+    #acc-custom .accordion-button:not(.collapsed) {
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      box-shadow: none;
+    }
+    #acc-custom .accordion-body {
+      border-left: 3px solid #3b82f6;
+      border-radius: 8px;
+      margin-top: 4px;
+    }
+    #acc-custom .accordion-item {
+      border: none;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    #acc-icons .accordion-button::after { display: none; }
+    #acc-icons .accordion-button .bi { margin-left: auto; font-size: 18px; transition: transform 0.2s; }
+    #acc-icons .accordion-button:not(.collapsed) .bi-plus-circle::before { content: "\f2ea"; }
+  </style>
+
+  <style id="portfolio-return-link-style">
+    .portfolio-return-link {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 99999;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border: 1px solid rgba(17, 24, 39, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #111827;
+      font-family: Inter, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .portfolio-return-link:hover {
+      transform: translateY(-1px);
+      background: #ffffff;
+      color: #111827;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.2);
+    }
+
+    .portfolio-return-link:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 640px) {
+      .portfolio-return-link {
+        top: 10px;
+        left: 10px;
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="portfolio-return-link" href="../../../labs/index.html" aria-label="Вернуться к списку всех лабораторных работ">← К лабораторным</a>
+
+
+<h2 class="mb-1">Аккордеон Bootstrap 5</h2>
+
+<h4>Внешнее управление (кнопки вне аккордеона)</h4>
+<p class="section-label">Кнопки могут открывать конкретные панели, указывая <code>data-bs-target</code></p>
+<div class="mb-2">
+  <button class="btn btn-outline-secondary btn-sm me-1" type="button" data-bs-toggle="collapse" data-bs-target="#ext1">Открыть X</button>
+  <button class="btn btn-outline-secondary btn-sm me-1" type="button" data-bs-toggle="collapse" data-bs-target="#ext2">Открыть Y</button>
+  <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#ext3">Открыть Z</button>
+</div>
+<div class="accordion" id="acc-external">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#ext1">
+        Внешняя панель X
+      </button>
+    </h2>
+    <div id="ext1" class="accordion-collapse collapse" data-bs-parent="#acc-external">
+      <div class="accordion-body">
+        Открыто внешней кнопкой.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#ext2">
+        Внешняя панель Y
+      </button>
+    </h2>
+    <div id="ext2" class="accordion-collapse collapse" data-bs-parent="#acc-external">
+      <div class="accordion-body">
+        Открыто внешней кнопкой.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#ext3">
+        Внешняя панель Z
+      </button>
+    </h2>
+    <div id="ext3" class="accordion-collapse collapse" data-bs-parent="#acc-external">
+      <div class="accordion-body">
+        Открыто внешней кнопкой.
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Цветовые варианты (Bootstrap utility классы)</h4>
+<div class="accordion" id="acc-colors">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button bg-primary text-white" type="button"
+              data-bs-toggle="collapse" data-bs-target="#color1">
+        Primary
+      </button>
+    </h2>
+    <div id="color1" class="accordion-collapse collapse show" data-bs-parent="#acc-colors">
+      <div class="accordion-body bg-primary bg-opacity-10">
+        Синий аккордеон
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed bg-success text-white" type="button"
+              data-bs-toggle="collapse" data-bs-target="#color2">
+        Success
+      </button>
+    </h2>
+    <div id="color2" class="accordion-collapse collapse" data-bs-parent="#acc-colors">
+      <div class="accordion-body bg-success bg-opacity-10">
+        Зелёный аккордеон
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed bg-danger text-white" type="button"
+              data-bs-toggle="collapse" data-bs-target="#color3">
+        Danger
+      </button>
+    </h2>
+    <div id="color3" class="accordion-collapse collapse" data-bs-parent="#acc-colors">
+      <div class="accordion-body bg-danger bg-opacity-10">
+        Красный аккордеон
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed bg-warning text-dark" type="button"
+              data-bs-toggle="collapse" data-bs-target="#color4">
+        Warning
+      </button>
+    </h2>
+    <div id="color4" class="accordion-collapse collapse" data-bs-parent="#acc-colors">
+      <div class="accordion-body bg-warning bg-opacity-10">
+        Жёлтый аккордеон
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Произвольная разметка в <code>.accordion-body</code></h4>
+<div class="accordion" id="acc-rich">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button"
+              data-bs-toggle="collapse" data-bs-target="#r1" aria-expanded="true">
+        Таблица
+      </button>
+    </h2>
+    <div id="r1" class="accordion-collapse collapse show" data-bs-parent="#acc-rich">
+      <div class="accordion-body">
+        <table class="table table-sm table-bordered mb-0">
+          <tr><td class="text-muted">Устройство</td><td>Ноутбук</td></tr>
+          <tr><td class="text-muted">Модель</td><td>ProBook 450</td></tr>
+          <tr><td class="text-muted">Память</td><td>16 ГБ</td></tr>
+          <tr><td class="text-muted">Экран</td><td>15.6" IPS</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#r2" aria-expanded="false">
+        Список и кнопка
+      </button>
+    </h2>
+    <div id="r2" class="accordion-collapse collapse" data-bs-parent="#acc-rich">
+      <div class="accordion-body">
+        <ul class="list-group list-group-flush mb-2">
+          <li class="list-group-item d-flex justify-content-between">Продукт Альфа <span class="badge bg-primary">Новинка</span></li>
+          <li class="list-group-item d-flex justify-content-between">Продукт Бета <span class="badge bg-danger">Распродано</span></li>
+          <li class="list-group-item d-flex justify-content-between">Продукт Гамма <span class="badge bg-success">Акция</span></li>
+        </ul>
+        <button class="btn btn-sm btn-outline-primary">Подробнее</button>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#r3" aria-expanded="false">
+        Поля ввода
+      </button>
+    </h2>
+    <div id="r3" class="accordion-collapse collapse" data-bs-parent="#acc-rich">
+      <div class="accordion-body">
+        <div class="mb-2">
+          <label class="form-label small">Имя</label>
+          <input type="text" class="form-control form-control-sm">
+        </div>
+        <div class="mb-2">
+          <label class="form-label small">Email</label>
+          <input type="email" class="form-control form-control-sm">
+        </div>
+        <button class="btn btn-sm btn-primary">Отправить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Вложенный аккордеон</h4>
+<div class="accordion" id="acc-nested">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button"
+              data-bs-toggle="collapse" data-bs-target="#nest1">
+        Родительская панель 1
+      </button>
+    </h2>
+    <div id="nest1" class="accordion-collapse collapse show" data-bs-parent="#acc-nested">
+      <div class="accordion-body">
+        <p>Внутри ещё один аккордеон:</p>
+        <div class="accordion" id="acc-nested-inner">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#nest-inner1">
+                Вложенная панель A
+              </button>
+            </h2>
+            <div id="nest-inner1" class="accordion-collapse collapse" data-bs-parent="#acc-nested-inner">
+              <div class="accordion-body">
+                Контент вложенного аккордеона.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#nest-inner2">
+                Вложенная панель B
+              </button>
+            </h2>
+            <div id="nest-inner2" class="accordion-collapse collapse" data-bs-parent="#acc-nested-inner">
+              <div class="accordion-body">
+                Ещё один контент.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#nest2">
+        Родительская панель 2
+      </button>
+    </h2>
+    <div id="nest2" class="accordion-collapse collapse" data-bs-parent="#acc-nested">
+      <div class="accordion-body">
+        Обычное содержимое.
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Кастомный CSS</h4>
+<div class="accordion" id="acc-custom">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button"
+              data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="true">
+        Состояния кнопки
+      </button>
+    </h2>
+    <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#acc-custom">
+      <div class="accordion-body">
+        Стили для обычного и <code>:not(.collapsed)</code>.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="false">
+        Тело панели
+      </button>
+    </h2>
+    <div id="c2" class="accordion-collapse collapse" data-bs-parent="#acc-custom">
+      <div class="accordion-body">
+        Левая акцентная граница у <code>.accordion-body</code>.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#c3" aria-expanded="false">
+        Фокус
+      </button>
+    </h2>
+    <div id="c3" class="accordion-collapse collapse" data-bs-parent="#acc-custom">
+      <div class="accordion-body">
+        <code>:focus</code> без стандартной обводки Bootstrap.
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Несколько открытых панелей</h4>
+<div class="accordion" id="acc-multi">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button"
+              data-bs-toggle="collapse" data-bs-target="#m1" aria-expanded="true">
+        Панель A
+      </button>
+    </h2>
+    <div id="m1" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+        Можно открыть параллельно с другими.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#m2" aria-expanded="false">
+        Панель B
+      </button>
+    </h2>
+    <div id="m2" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        Можно открыть параллельно с другими.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#m3" aria-expanded="false">
+        Панель C
+      </button>
+    </h2>
+    <div id="m3" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        Можно открыть параллельно с другими.
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Один активный пункт</h4>
+<div class="accordion" id="acc-basic">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button"
+              data-bs-toggle="collapse" data-bs-target="#b1" aria-expanded="true">
+        Раздел 1
+      </button>
+    </h2>
+    <div id="b1" class="accordion-collapse collapse show" data-bs-parent="#acc-basic">
+      <div class="accordion-body">
+        Контент с открытием по умолчанию.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#b2" aria-expanded="false">
+        Раздел 2
+      </button>
+    </h2>
+    <div id="b2" class="accordion-collapse collapse" data-bs-parent="#acc-basic">
+      <div class="accordion-body">
+        Контент второго раздела.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#b3" aria-expanded="false">
+        Раздел 3
+      </button>
+    </h2>
+    <div id="b3" class="accordion-collapse collapse" data-bs-parent="#acc-basic">
+      <div class="accordion-body">
+        Контент третьего раздела.
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Своя иконка вместо chevron</h4>
+<div class="accordion" id="acc-icons">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#i1">
+        <span>Элемент 1</span>
+        <i class="bi bi-plus-circle"></i>
+      </button>
+    </h2>
+    <div id="i1" class="accordion-collapse collapse" data-bs-parent="#acc-icons">
+      <div class="accordion-body">
+        Плюс → минус при раскрытии.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#i2">
+        <span>Элемент 2</span>
+        <i class="bi bi-plus-circle"></i>
+      </button>
+    </h2>
+    <div id="i2" class="accordion-collapse collapse" data-bs-parent="#acc-icons">
+      <div class="accordion-body">
+        Плюс → минус при раскрытии.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#i3">
+        <span>Элемент 3</span>
+        <i class="bi bi-plus-circle"></i>
+      </button>
+    </h2>
+    <div id="i3" class="accordion-collapse collapse" data-bs-parent="#acc-icons">
+      <div class="accordion-body">
+        Плюс → минус при раскрытии.
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4><code>.accordion-flush</code> (Без стилизации)</h4>
+<div class="accordion accordion-flush bg-white border" id="acc-flush">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#f1">
+        Секция I
+      </button>
+    </h2>
+    <div id="f1" class="accordion-collapse collapse" data-bs-parent="#acc-flush">
+      <div class="accordion-body">
+        Контент в flush-режиме.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#f2">
+        Секция II
+      </button>
+    </h2>
+    <div id="f2" class="accordion-collapse collapse" data-bs-parent="#acc-flush">
+      <div class="accordion-body">
+        Контент в flush-режиме.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#f3">
+        Секция III
+      </button>
+    </h2>
+    <div id="f3" class="accordion-collapse collapse" data-bs-parent="#acc-flush">
+      <div class="accordion-body">
+        Контент в flush-режиме.
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4>Отключённая кнопка (disabled)</h4>
+<div class="accordion" id="acc-disabled">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button"
+              data-bs-toggle="collapse" data-bs-target="#d1">
+        Рабочая панель
+      </button>
+    </h2>
+    <div id="d1" class="accordion-collapse collapse show" data-bs-parent="#acc-disabled">
+      <div class="accordion-body">
+        Эту панель можно открыть.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#d2" disabled>
+        Заблокированная панель
+      </button>
+    </h2>
+    <div id="d2" class="accordion-collapse collapse" data-bs-parent="#acc-disabled">
+      <div class="accordion-body">
+        Этот контент не появится, потому что кнопка disabled.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button"
+              data-bs-toggle="collapse" data-bs-target="#d3">
+        Обычная панель
+      </button>
+    </h2>
+    <div id="d3" class="accordion-collapse collapse" data-bs-parent="#acc-disabled">
+      <div class="accordion-body">
+        Обычный контент.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Фреймворки · Works Archive</title>
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <script src="../../assets/js/main.js" defer></script>
+  
+  <style id="portfolio-return-link-style">
+    .portfolio-return-link {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 99999;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border: 1px solid rgba(17, 24, 39, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #111827;
+      font-family: Inter, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .portfolio-return-link:hover {
+      transform: translateY(-1px);
+      background: #ffffff;
+      color: #111827;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.2);
+    }
+
+    .portfolio-return-link:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 640px) {
+      .portfolio-return-link {
+        top: 10px;
+        left: 10px;
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+  <body>
+  <a class="portfolio-return-link" href="../../labs/index.html" aria-label="Вернуться к списку всех лабораторных работ">← К лабораторным</a>
+
+    <header class="site-header">
+      <a class="brand" href="../../"><span class="brand__mark">W</span><span class="brand__text">Works Archive</span></a>
+      <nav class="site-nav" aria-label="Навигация">
+        <a href="../../">Портфолио</a>
+        <a href="../../projects/focus-board/">FocusBoard</a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle><span data-theme-label>Тема</span></button>
+    </header>
+    <main>
+      <section class="section hero" style="min-height:auto;grid-template-columns:1fr;">
+        <div class="hero__content">
+          <p class="eyebrow">Старые ссылки сохранены</p>
+          <h1>Фреймворки</h1>
+          <p class="hero__text">Старый раздел фреймворков включён в единую структуру портфолио.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="../../labs/">Новый архив labs</a>
+            <a class="button button--ghost" href="../../">На главную</a>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="cards-grid"><article class="mini-card"><span class="tag tag--muted">№1</span><h3>Bootstrap Grid</h3><p>Сетка, row-cols, offsets и адаптивные блоки.</p><p style="margin-top:1rem"><a class="text-link" href="1/taskf1.html">Открыть</a></p></article><article class="mini-card"><span class="tag tag--muted">№2</span><h3>Формы</h3><p>Поля, состояния и элементы формы Bootstrap.</p><p style="margin-top:1rem"><a class="text-link" href="2/taskf2.html">Открыть</a></p></article><article class="mini-card"><span class="tag tag--muted">№3</span><h3>Карточки</h3><p>Карточки товаров и responsive layout.</p><p style="margin-top:1rem"><a class="text-link" href="3/template.html">Открыть</a></p></article><article class="mini-card"><span class="tag tag--muted">№4</span><h3>Таблицы</h3><p>Bootstrap tables и responsive-table.</p><p style="margin-top:1rem"><a class="text-link" href="4/table.html">Открыть</a></p></article><article class="mini-card"><span class="tag tag--muted">№5</span><h3>Навигация</h3><p>Navbar и демонстрация Bootstrap-навигации.</p><p style="margin-top:1rem"><a class="text-link" href="5/">Открыть</a></p></article><article class="mini-card"><span class="tag tag--muted">№6</span><h3>Carousel</h3><p>Карусель Bootstrap.</p><p style="margin-top:1rem"><a class="text-link" href="6/Carousel.html">Открыть</a></p></article><article class="mini-card"><span class="tag tag--muted">№7</span><h3>Accordion</h3><p>Аккордеон Bootstrap.</p><p style="margin-top:1rem"><a class="text-link" href="7/accordeon.html">Открыть</a></p></article><article class="mini-card"><span class="tag tag--muted">№7*</span><h3>Accordion — доп.</h3><p>Дополнительный вариант аккордеона.</p><p style="margin-top:1rem"><a class="text-link" href="7/accordeon1.html">Открыть</a></p></article><article class="mini-card"><span class="tag tag--muted">№8</span><h3>УютМаркет</h3><p>Учебный магазин с карточками, формой и модальным окном.</p><p style="margin-top:1rem"><a class="text-link" href="8/">Открыть</a></p></article></div>
+      </section>
+    </main>
+  </body>
+</html>
