@@ -62,26 +62,6 @@ HTML5 · CSS3 · JavaScript · GitHub Pages · LocalStorage · Responsive Design
 - переключение светлой/тёмной темы;
 - адаптивная вёрстка.
 
-## Как залить на GitHub Pages
-
-1. Распакуйте архив.
-2. Скопируйте всё содержимое архива в корень репозитория `utp-frameworks`.
-3. Сделайте commit и push:
-
-```bash
-git add .
-git commit -m "Redesign portfolio and add FocusBoard project"
-git push
-```
-
-4. В настройках GitHub Pages выберите ветку `main` и папку `/root`.
-
-## Рекомендованные GitHub topics
-
-```text
-html css javascript portfolio frontend github-pages localstorage responsive-design
-```
-
 ## Лицензия
 
 MIT
