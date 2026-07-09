@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Скачать файл</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;        
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #f0f2f5;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;                 
+      box-sizing: border-box;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #4263eb;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 20px;
+      transition: 0.2s;
+    }
+    .download-btn:hover {
+      background: #2c4ed4;
+      transform: scale(1.02);
+    }
+
+    .bottom-photo {
+      margin-top: 30px;            
+      max-width: 300px;           
+      width: 100%;               
+      height: auto;               
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  </style>
+
+  <style id="portfolio-return-link-style">
+    .portfolio-return-link {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 99999;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border: 1px solid rgba(17, 24, 39, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #111827;
+      font-family: Inter, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .portfolio-return-link:hover {
+      transform: translateY(-1px);
+      background: #ffffff;
+      color: #111827;
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.2);
+    }
+
+    .portfolio-return-link:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 640px) {
+      .portfolio-return-link {
+        top: 10px;
+        left: 10px;
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="portfolio-return-link" href="../../../labs/index.html" aria-label="Вернуться к списку всех лабораторных работ">← К лабораторным</a>
+
+  <div class="card">
+    <h2>📁 Работа №6</h2>
+    <p>Нажмите кнопку, чтобы скачать файл:</p>
+    <a class="download-btn" href="1.psd" download>📥 Скачать файл</a>
+    <p style="font-size: 0.8rem; margin-top: 20px; color: #6c757d;">Файл в формате PSD</p>
+  </div>
+
+  <img src="1.png" alt="Пример работы" class="bottom-photo">
+</body>
+</html>
